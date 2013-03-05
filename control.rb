@@ -6,6 +6,8 @@ class Control
     @bikes = [] #Array.new
     @people = []
     @stations = []
+    @vans = []
+    @garages = []
     #@bikes << Bike.new # @bikes = [Bike.new]
     10.times do |i|
       @bikes << Bike.new(rand(2).zero?)
@@ -18,20 +20,26 @@ class Control
 
     @stations << Station.new
 
+    @vans << Van.new
+
+    # @garages << Garage.new
 
     @bikes.each do |bike|
       @stations.first.add_bike(bike)
     end
 
-
-     @people.first.assign_bike(@stations.first.release_bike) 
+    @people.first.assign_bike(@stations.first.release_bike) 
 
   end
    def create_report
     
     station = @stations.first
+    van = @vans.first
+    van.collect_broken_bikes(station)
+    garage = @garages.first
 
-    "This chap has a bike #{@people.first} and our STATION has #{station.available_bikes_count} bikes in the DOCK and the garage has #{station.repair_bikes_count} broken bikes"
+    "This chap has a bike #{@people.first} and our STATION has #{station.available_bikes_count} bikes in the DOCK and 
+    #{van.collected_bikes.count} broken bikes are currently in transit in our van. The garage just checked in these #{} bikes"
 
    end
 

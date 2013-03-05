@@ -22,7 +22,12 @@ end
 
 def add_bike(bike)
   @bikes_in_station << bike
- end 
+end 
+
+def release_broken_bikes
+  @bikes_in_station.reject! {|b| b.broken? }
+end
+
 # while @bikes is less than < 50 add @bikes to @bikes_in_station
   def bikes_to_s
     @bikes_in_station.inspect
