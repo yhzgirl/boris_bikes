@@ -38,8 +38,10 @@ class Control
     van.collect_broken_bikes(station)
     garage = @garages.first
 
-    "This chap has a bike #{@people.first} and our STATION has #{station.available_bikes_count} bikes in the DOCK and 
-    #{van.collected_bikes.count} broken bikes are currently in transit in our van. The garage just checked in these #{} bikes"
+    puts "This chap has a bike #{@people.first}" 
+    puts "STATION has #{station.available_bikes_count} bikes in the DOCK"
+    puts "#{van.collected_bikes.count} broken bikes are currently in transit in our van."
+    puts "The garage just checked in these #{} bikes"
 
    end
 

@@ -25,7 +25,9 @@ def add_bike(bike)
 end 
 
 def release_broken_bikes
-  @bikes_in_station.reject! {|b| b.broken? }
+  broken_bikes = @bikes_in_station.select {|b| b.broken? }
+  @bikes_in_station -= broken_bikes
+  broken_bikes # return the broken bikes
 end
 
 # while @bikes is less than < 50 add @bikes to @bikes_in_station
