@@ -1,4 +1,6 @@
-class Control
+class Control 
+
+  attr_reader :bikes, :people, :stations 
 
   def initialize 
     @bikes = [] #Array.new
@@ -15,18 +17,18 @@ class Control
 
     @stations << Station.new
 
-    @stations.first.add_bikes(@bikes)
+
+    @bikes.each do |bike|
+      @stations.first.add_bike(bike)
+    end
 
      @people.first.assign_bike(@stations.first.release_bike) 
-     
-
-      puts "Inside the people #{@people}"
 
   end
-
    def create_report
-    #"Hello World #{@bikes} and hello again #{@people} and one station for now #{@stations} AND ALSO #{@stations.first.bikes_to_s} PERSON WITH BIKE #{@assigned_bike}}" 
-    "PERSON WITH BIKE #{}"
+    
+    station = @stations.first
+    "This chap has a bike #{@people} and our STATION has #{station.bike_count} bikes in the DOCK"
    end
 
    #first person (array)@people.first 

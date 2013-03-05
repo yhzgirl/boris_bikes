@@ -5,4 +5,4 @@ require './station'
 
 control = Control.new
 control.run 
-puts control.create_report
+puts control.create_report 
