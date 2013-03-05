@@ -8,7 +8,8 @@ class Control
     @stations = []
     #@bikes << Bike.new # @bikes = [Bike.new]
     10.times do |i|
-      @bikes << Bike.new
+      @bikes << Bike.new(rand(2).zero?)
+      puts "created a new #{"not" unless @bikes.last.broken?} broken bike"
     end
 
     10.times do |i|
@@ -22,13 +23,16 @@ class Control
       @stations.first.add_bike(bike)
     end
 
+
      @people.first.assign_bike(@stations.first.release_bike) 
 
   end
    def create_report
     
     station = @stations.first
-    "This chap has a bike #{@people} and our STATION has #{station.bike_count} bikes in the DOCK"
+
+    "This chap has a bike #{@people.first} and our STATION has #{station.available_bikes_count} bikes in the DOCK and is broken"
+
    end
 
    #first person (array)@people.first 

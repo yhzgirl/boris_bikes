@@ -1,7 +1,12 @@
 class Bike
 
-  def broken_bike
-    
+  def initialize(broken)
+    @broken = broken
   end
+
+  def broken?
+    @broken 
+  end
+
 
 end

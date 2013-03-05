@@ -12,6 +12,10 @@ def bike_count
   @bikes_in_station.count
 end
 
+def available_bikes_count
+  @bikes_in_station.count {|b| not b.broken? }
+end
+
 def add_bike(bike)
   @bikes_in_station << bike
  end 
