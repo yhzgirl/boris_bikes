@@ -31,7 +31,7 @@ class Control
     
     station = @stations.first
 
-    "This chap has a bike #{@people.first} and our STATION has #{station.available_bikes_count} bikes in the DOCK and is broken"
+    "This chap has a bike #{@people.first} and our STATION has #{station.available_bikes_count} bikes in the DOCK and the garage has #{station.repair_bikes_count} broken bikes"
 
    end
 
