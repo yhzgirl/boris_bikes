@@ -1,11 +1,11 @@
 class Garage
 
   def initialize
-    
   end
 
-  def bikes_awaiting_repair
-
+  def repair_bikes(van)
+  van.collect_broken_bikes.each {|bike| bike.fix!}
+  station.return_to_station
   end
 
 end

@@ -30,14 +30,17 @@ def release_broken_bikes
   broken_bikes # return the broken bikes
 end
 
-# while @bikes is less than < 50 add @bikes to @bikes_in_station
   def bikes_to_s
     @bikes_in_station.inspect
   end
- # while @bikes_in_station is > 0 
- #    1 person can take bike 
 
  def release_bike
     @bikes_in_station.pop
   end
+
+  def return_to_station(bike)
+    @bikes_in_station += bike
+  end
+
+
 end

@@ -22,6 +22,8 @@ class Control
 
     @vans << Van.new
 
+    @garages << Garage.new    
+
     # @garages << Garage.new
 
     @bikes.each do |bike|
@@ -41,12 +43,10 @@ class Control
     puts "This chap has a bike #{@people.first}" 
     puts "STATION has #{station.available_bikes_count} bikes in the DOCK"
     puts "#{van.collected_bikes.count} broken bikes are currently in transit in our van."
-    puts "The garage just checked in these #{} bikes"
+    puts "FIXED!"
+    puts "Station now has #{station.available_bikes_count} bikes available"
 
    end
-
-   #first person (array)@people.first 
-
 
    def run
    end

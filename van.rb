@@ -6,8 +6,8 @@ class Van
     @collected_bikes = []
   end
 
-  def collect_broken_bikes(location)
-    @collected_bikes.concat(location.release_broken_bikes)
+  def collect_broken_bikes(station)
+    @collected_bikes.concat(station.release_broken_bikes)
   end
 
 end
